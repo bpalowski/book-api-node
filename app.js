@@ -8,9 +8,7 @@ const books = require('./db/serverdb');
 
 app.use('/books', bookRouter)
 
-
 app.listen(port, () => {
-
   console.log(`Example app listening at http://localhost:${port}`)
   books.setBooks()
 })

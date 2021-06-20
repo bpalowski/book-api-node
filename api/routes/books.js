@@ -10,29 +10,15 @@ const LocalStorage = require('node-localstorage').LocalStorage;
 const localStorage = new LocalStorage('./scratch');
 
 
-router.get('/', async (req, res) => {
+router.get('/', (req, res) => {
   let booksArr = localStorage.getItem("booksArr")
   let obj = JSON.parse(booksArr)
-  await myModule.getBook(obj.books)
   res.send(obj.books)
 })
 
 
 router.delete('/book/:title', (req, res) => {
-  let booksArr = localStorage.getItem("booksArr")
-  let obj = JSON.parse(booksArr)
 
-  // let title = req.params
-
-  // console.log(title)
-
-  // myModule.getBook(obj, title)
-  // console.log(test)
-  // console.log("hellos")
-
-  return res.send("sd")
-
-  // console.log("24", test)
 })
 
 
