@@ -1,11 +1,15 @@
 const express = require('express')
 const app = express()
+const bodyParser = require('body-parser')
 
-const port = 3000
+const port = 8080
+
 
 const bookRouter = require('./api/routes/books.js')
 const books = require('./db/serverdb');
 
+app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.json())
 app.use('/books', bookRouter)
 
 app.listen(port, () => {
